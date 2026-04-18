@@ -58,5 +58,13 @@
   "seo": {
     "indexing": "all"
   },
-  "description": "Linserin Yang's Notes"
+  "description": "Linserin Yang's Notes",
+  "styling": {
+    "latex": false
+  },
+  "integrations": {
+    "clarity": {
+      "projectId": "wdj2b0713w"
+    }
+  }
 }
