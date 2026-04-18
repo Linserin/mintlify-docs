@@ -7,16 +7,12 @@
     "light": "#4682B4",
     "dark": "#4682B4"
   },
-  "favicon": "/favicon.svg",
   "navigation": {
     "pages": [
+      "hi-there",
       "mix-up-spaces",
       "otp"
     ]
-  },
-  "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
   },
   "navbar": {
     "links": [],
@@ -54,12 +50,14 @@
       "dark": "#222222",
       "light": "#FFFAF0"
     },
-    "decoration": "gradient"
+    "decoration": "gradient",
+    "image": "/images/image.png"
   },
   "appearance": {
     "default": "system"
   },
   "seo": {
     "indexing": "all"
-  }
+  },
+  "description": "Linserin Yang's Notes"
 }
