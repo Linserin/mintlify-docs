@@ -10,8 +10,13 @@
   "navigation": {
     "pages": [
       "hi-there",
-      "mix-up-spaces",
-      "otp"
+      {
+        "group": "技术",
+        "pages": [
+          "otp",
+          "mix-up-spaces"
+        ]
+      }
     ]
   },
   "navbar": {
