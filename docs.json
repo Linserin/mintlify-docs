@@ -48,7 +48,8 @@
     }
   },
   "fonts": {
-    "family": "Ubuntu"
+    "family": "Ubuntu",
+    "source": "/"
   },
   "background": {
     "color": {
