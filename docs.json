@@ -48,8 +48,8 @@
     }
   },
   "fonts": {
-    "family": "Ubuntu",
-    "source": "/"
+    "family": "Source Sans Pro",
+    "weight": 600
   },
   "background": {
     "color": {
