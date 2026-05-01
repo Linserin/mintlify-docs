@@ -48,7 +48,9 @@
     }
   },
   "fonts": {
-    "family": "Roboto"
+    "family": "Roboto",
+    "source": "/font/RobotoMono-Regular.woff2",
+    "format": "woff2"
   },
   "background": {
     "color": {
