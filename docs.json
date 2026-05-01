@@ -48,7 +48,7 @@
     }
   },
   "fonts": {
-    "family": "Roboto",
+    "family": "Source Sans Pro",
     "source": "/font/RobotoMono-Regular.woff2",
     "format": "woff2"
   },
