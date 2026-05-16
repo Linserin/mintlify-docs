@@ -29,6 +29,10 @@
       {
         "href": "/",
         "label": "docs"
+      },
+      {
+        "href": "https://github.com/Linserin",
+        "label": "GitHub"
       }
     ],
     "primary": {
