@@ -21,7 +21,16 @@
     ]
   },
   "navbar": {
-    "links": [],
+    "links": [
+      {
+        "href": "https://itman-terminal.pages.dev/",
+        "label": "blog"
+      },
+      {
+        "href": "/",
+        "label": "docs"
+      }
+    ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
