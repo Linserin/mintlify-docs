@@ -15,7 +15,8 @@
         "pages": [
           "otp",
           "mix-up-spaces",
-          "wt-comfig"
+          "wt-comfig",
+          "commands"
         ]
       }
     ]
@@ -86,5 +87,11 @@
     "clarity": {
       "projectId": "wdj2b0713w"
     }
+  },
+  "metadata": {
+    "timestamp": true
+  },
+  "interaction": {
+    "drilldown": true
   }
 }
