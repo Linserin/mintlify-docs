@@ -24,7 +24,7 @@
   "navbar": {
     "links": [
       {
-        "href": "https://itman-terminal.pages.dev/",
+        "href": "https://blog.linserin.work",
         "label": "blog"
       },
       {
@@ -45,11 +45,16 @@
   "contextual": {
     "options": [
      "copy",
-     "view",
+    "view",
+    "assistant",
+    "download-pdf",
+    "download-spec",
      "chatgpt",
      "claude",
-     "perplexity",
-     "mcp",
+    "perplexity",
+    "aistudio",
+    "mcp",
+    "add-mcp",
      "cursor",
      "vscode"
    ]
@@ -58,12 +63,12 @@
     "socials": {
       "x": "https://x.com/LinserinYang",
       "github": "https://github.com/Linserin",
-      "website": "https://itman-terminal.pages.dev/",
+      "website": "https://linserin.work/",
       "telegram": "https://t.me/Linserin_init"
     }
   },
   "fonts": {
-    "family": "Source Sans Pro",
+    "family": "Roboto",
     "weight": 600
   },
   "background": {
@@ -93,5 +98,8 @@
   },
   "interaction": {
     "drilldown": true
+  },
+  "icons": {
+    "library": "fontawesome"
   }
 }
