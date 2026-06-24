@@ -23,7 +23,11 @@
         "group": "Go",
         "pages": [
           "start-1",
-          "include-packages"
+          "include-packages",
+          "variable",
+          "input",
+          "calc",
+          "if"
         ]
       }
     ]

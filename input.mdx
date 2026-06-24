@@ -1,0 +1,132 @@
+---
+title: "输入"
+---
+
+`fmt` 模块类似 C\+\+ 中的 `iostream`，C 中的 `stdio.h`
+
+接下来开始讲述。
+
+## 处理输入
+
+<Steps>
+  <Step title="使用 fmt 包提供的 Scan 和 Sscan 开头的函数">
+    ```go
+    // 从控制台读取输入:
+    package main
+    import "fmt"
+    
+    var (
+       firstName, lastName, s string
+       i int
+       f float32
+       input = "56.12 / 5212 / Go"
+       format = "%f / %d / %s"
+    )
+    
+    func main() {
+       fmt.Println("Please enter your full name: ")
+       fmt.Scanln(&firstName, &lastName)
+       // fmt.Scanf("%s %s", &firstName, &lastName)
+       fmt.Printf("Hi %s %s!\n", firstName, lastName) // Hi Chris Naegels
+       fmt.Sscanf(input, format, &f, &i, &s)
+       fmt.Println("From the string we read: ", f, i, s)
+        // 输出结果: From the string we read: 56.12 5212 Go
+    }
+    ```
+  </Step>
+  <Step title="运行">
+    ```shellscript
+    go mod tidy;go run .
+    ```
+  </Step>
+  <Step title="输出">
+    ```text
+    C:\Users\Administrator\Desktop\git\0>go run .
+    Please enter your full name:
+    Chris Naegels
+    Hi Chris Naegels !
+    From the string we read:  56.12 5212 Go
+    ```
+  </Step>
+</Steps>
+
+## 解析
+
+我们分三部分讲这里的过程。
+
+<Steps>
+  <Step title="引入 fmt,声明变量">
+    在这里开头，先使用 var() 声明了一堆变量
+
+    让我们首先关注 firstName 和 lastName。
+
+    和这两个函数相关的代码我们单独抽出来：
+
+    ```go
+
+    package main
+    
+    import "fmt"
+    
+    var (
+    
+    	firstName, lastName string
+    
+    )
+    
+    func main() {
+    
+    	fmt.Println("Please enter your full name: ")
+    
+    	fmt.Scanln(&firstName, &lastName)
+    
+    	// fmt.Scanf("%s %s", &firstName, &lastName)
+    
+    	fmt.Printf("Hi %s %s!\\n", firstName, lastName) // Hi Chris Naegels
+    
+    }
+    
+    ```
+
+    声明这两个函数为 `string` 类型，随即打印 `Please enter your full name:` 。
+
+    在此之`fmt.Scanln(&firstName, &lastName)` 让用户输入，以空格分割两个变量（从注释中 `fmt.Scanf("%s %s", &firstName, &lastName)` 不难看出）
+
+    然后再将两个变量打印。
+  </Step>
+  <Step title="input,f,i,s,format 四个变量">
+    在这四个变量中 `format` 变量是把 `input`变量转换为 `f`,`i`,`s` 的格式化的规范。
+
+    在开头定义了 `input` 的值为
+
+    ```text
+    56.12 / 5212 / Go
+    ```
+
+    在这之中，`56.12` 为小数 `float`，`5212` 为整数 `int`，`Go` 为字符串 `string`
+
+    最终通过 `fmt.Sscanf(input, format, &f, &i, &s)` 进行格式化。\\
+  </Step>
+  <Step title="fmt.Sscanf() 中发生了什么？">
+    不难看出`fmt.Sscanf()` 中，输入的一方为 `&[变量名]`
+
+    那么 `input`与 `format` 作为输入值，经过 `format` 格式化后，赋值进入 `f`,`i`,`s` 中。
+
+    因此，经过复制后，是这样的过程（mermaid 流程由 AI 生成）。
+
+    ```mermaid actions={true}
+    graph LR
+A["input: 56.12 / 5212 / Go"] --> B[fmt.Sscanf]
+C["format: %f / %d / %s"] --> B
+B --> D[f = 56.12]
+B --> E[i = 5212]
+B --> F[s = Go]
+    ```
+  </Step>
+</Steps>
+
+从此之后，关于 Go 的输入输出基本够用了。
+
+参考：
+
+- [https://learnku.com/docs/the-way-to-go/121-reads-user-input/3661](https://learnku.com/docs/the-way-to-go/121-reads-user-input/3661)

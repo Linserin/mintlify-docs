@@ -1,0 +1,83 @@
+---
+title: "if 的使用"
+---
+
+<Card title="在本页" type="info">
+  Linserin 作为一个有 C\+\+ NOI 经历的人（尽管已经几乎忘光了），算法这里总是绕不开的话题。这里先从简单讲起。
+</Card>
+
+先前已经学习了 Hello World 的实现和 `quote` 模块的调用，接下来将要学习 if-switch 的使用。
+
+For example:
+
+我们做一个判断**闰年**的计算器。
+
+> **闰年逻辑**：标准公历规则——能被4整除且**不能被100整除，或能被400整除**。
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var input string
+    fmt.Print("请输入年份：")
+    // 读取一行输入（含空格等），保存为字符串
+    fmt.Scanln(&input)
+
+    var year int
+    // 使用 fmt.Sscanf 从字符串中解析出年份
+    n, err := fmt.Sscanf(input, "%d", &year)
+    if err != nil || n != 1 {
+        fmt.Println("输入无效，请输入一个整数。")
+        return
+    }
+
+    // 闰年判定：能被4整除且不能被100整除，或能被400整除
+    if (year%4 == 0 && year%100 != 0) || year%400 == 0 {
+        fmt.Printf("%d 年是闰年。\n", year)
+    } else {
+        fmt.Printf("%d 年是平年（普通年）。\n", year)
+    }
+}
+```
+
+同样，开始算法讲解 。
+
+<Steps>
+  <Step title="程序开始">
+    ```go
+        var input string
+        fmt.Print("请输入年份：")
+        // 读取一行输入（含空格等），保存为字符串
+        fmt.Scanln(&input)
+    ```
+
+    赋值输入 `input` （`input` 为字符串类型）
+  </Step>
+  <Step title="格式化为 int 变量">
+    ```go
+    // 定义 year 变量    
+    var year int
+    
+    // 使用 fmt.Sscanf 从字符串中解析出年份
+    n, err := fmt.Sscanf(input, "%d", &year)
+    
+    // 错误处理
+    if err != nil || n != 1 {
+        fmt.Println("输入无效，请输入一个整数。")
+        return
+    }
+    ```
+  </Step>
+  <Step title="判定并输出">
+    ```go
+    // 闰年判定：能被4整除且不能被100整除，或能被400整除
+    if (year%4 == 0 && year%100 != 0) || year%400 == 0 {
+        fmt.Printf("%d 年是闰年。\n", year)
+    } else {
+        fmt.Printf("%d 年是平年（普通年）。\n", year)
+    }
+    ```
+  </Step>
+</Steps>
