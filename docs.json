@@ -27,7 +27,8 @@
           "variable",
           "input-and-formatting",
           "calc",
-          "if"
+          "if",
+          "for-for-loop"
         ]
       }
     ]
