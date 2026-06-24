@@ -1,5 +1,5 @@
 ---
-title: "输入"
+title: "输入与格式化"
 ---
 
 `fmt` 模块类似 C\+\+ 中的 `iostream`，C 中的 `stdio.h`
@@ -126,6 +126,160 @@ B --> F[s = Go]
 </Steps>
 
 从此之后，关于 Go 的输入输出基本够用了。
+
+## 格式化输出（fmt 的格式化能力）
+
+在 Go 语言中，`fmt` 不仅可以处理输入，还提供了非常强大的“格式化输出能力”，类似 C 语言中的 `printf` 系列函数。
+
+---
+
+## 格式化输出到控制台
+
+`fmt.Printf` 用于按照指定格式输出内容。
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	name := "Go"
+	age := 15
+	score := 98.5
+
+	fmt.Printf("name=%s, age=%d, score=%.1f\n", name, age, score)
+}
+```
+
+输出结果：
+
+> name=Go, age=15, score=98.5
+
+## 常用格式化占位符（verbs）
+
+Go 的格式化符号非常重要，几乎所有 fmt 输出都会用到：
+
+| 占位符 | 说明 | 示例 |
+| --- | --- | --- |
+| `%s` | 字符串 | `"Go"` |
+| `%d` | 十进制整数 | `123` |
+| `%f` | 浮点数 | `3.14` |
+| `%.2f` | 保留 2 位小数的浮点数 | `3.14` |
+| `%t` | 布尔值 | `true` |
+| `%v` | 默认格式 | 任意类型 |
+| `%T` | 类型 | `int` / `string` |
+| `%+v` | 显示字段名（结构体） | `{Field:Value}` |
+
+##生成格式化字符串
+
+`Sprintf` 不直接输出，而是返回一个字符串。
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	name := "Gopher"
+	age := 20
+
+	result := fmt.Sprintf("name=%s, age=%d", name, age)
+	fmt.Println(result)
+}
+```
+
+输出：
+
+name=Gopher, age=20
+
+使用场景：
+
+拼接字符串
+
+日志生成
+
+数据预处理
+
+## 写入到指定输出流
+
+可以把格式化内容写入文件或其他输出目标。
+
+```go
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	fmt.Fprintf(os.Stdout, "Hello %s!\n", "World")
+}
+```
+
+输出：
+
+> Hello World!
+
+> os.Stdout 表示标准输出，也可以替换为文件句柄。
+
+格式化输入回顾：Sscanf 的本质
+
+我们之前用过：
+
+fmt.Sscanf(input, format, &f, &i, &s)
+
+它的本质是：
+
+> 按照 format 规则，从字符串中“解析”数据
+
+示例：
+
+```text
+package main
+
+import "fmt"
+
+func main() {
+	input := "56.12 / 5212 / Go"
+
+	var f float64
+	var i int
+	var s string
+
+	fmt.Sscanf(input, "%f / %d / %s", &f, &i, &s)
+
+	fmt.Println(f, i, s)
+}
+```
+
+输出：
+
+56.12 5212 Go
+
+---
+
+本质理解：
+
+Printf：格式化输出
+
+Sprintf：格式化成字符串
+
+Fprintf：格式化写入流
+
+Sscanf：按格式解析输入
+
+---
+
+总结
+
+Go 的 fmt 可以理解为一个“格式化引擎”：
+
+输出：Printf / Sprintf / Fprintf
+
+输入解析：Scan / Scanf / Sscanf
+
+它们共享同一套“格式化规则（verbs）”，这是 Go 输入输出系统的核心设计之一。
 
 参考：
 
