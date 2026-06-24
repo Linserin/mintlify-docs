@@ -18,6 +18,13 @@
           "wt-comfig",
           "commands"
         ]
+      },
+      {
+        "group": "Go",
+        "pages": [
+          "start-1",
+          "include-packages"
+        ]
       }
     ]
   },
