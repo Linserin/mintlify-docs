@@ -36,10 +36,6 @@
   "navbar": {
     "links": [
       {
-        "href": "https://blog.linserin.work",
-        "label": "blog"
-      },
-      {
         "href": "/",
         "label": "docs"
       },
