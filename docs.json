@@ -28,7 +28,8 @@
           "input-and-formatting",
           "calc",
           "if",
-          "for-for-loop"
+          "for-for-loop",
+          "array"
         ]
       }
     ]
