@@ -3,9 +3,9 @@
   "theme": "almond",
   "name": "Linserin Yang's Notes",
   "colors": {
-    "primary": "#4682B4",
-    "light": "#4682B4",
-    "dark": "#4682B4"
+    "primary": "#c4bbd7",
+    "light": "#e2ddeb",
+    "dark": "#5e5571"
   },
   "navigation": {
     "pages": [
@@ -88,8 +88,8 @@
   },
   "background": {
     "color": {
-      "dark": "#222222",
-      "light": "#FFFAF0"
+      "dark": "#2f2a38",
+      "light": "#e2ddeb"
     },
     "decoration": "gradient"
   },
