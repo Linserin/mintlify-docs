@@ -23,13 +23,19 @@
         "group": "Go",
         "pages": [
           "start-1",
-          "include-packages",
-          "variable",
-          "input-and-formatting",
-          "calc",
-          "if",
-          "for-for-loop",
-          "array"
+          {
+            "group": "基本语句与变量",
+            "pages": [
+              "include-packages",
+              "variable",
+              "calc",
+              "input-and-formatting",
+              "if",
+              "switch",
+              "for-for-loop",
+              "array"
+            ]
+          }
         ]
       }
     ]
