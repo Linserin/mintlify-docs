@@ -17,7 +17,8 @@
           "mix-up-spaces",
           "wt-comfig",
           "commands"
-        ]
+        ],
+        "expanded": true
       },
       {
         "group": "Go",
@@ -34,9 +35,12 @@
               "switch",
               "for-for-loop",
               "array"
-            ]
+            ],
+            "icon": "message-code"
           }
-        ]
+        ],
+        "icon": "code",
+        "expanded": true
       }
     ]
   },
